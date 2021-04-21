@@ -19,6 +19,24 @@
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you?
+Being college students during this pandemic we have realized the importance of time management and organization. Therefore, we want to create a task manager that will keep students organized while managing these tough times.
+
+Languages and tools:
+    * c++
+    * git
+    * Github
+    * Valgrind
+The input of our project will be the client typing in certain tasks with the options to add a priority level and a due date. The output of the project will be a list of tasks that need to be completed, ranked by priority. The client can also make subtasks that will also have priority levels and due dates.
+
+Prototype - 
+	One of the design patterns we chose to use in this project is Prototype. We chose this pattern because it will allow us to clone a list without having to fill out a whole new list. For example, this will allow the user to copy their tasks from week A to week B without having to re-enter the items on the list. The problem we anticipate encountering while implementing this project is that some of the data that the feature will try to copy from week A to week B will be private. We will need to use prototype to clone the objects because it will allow us to use the same class and create a new object which can still access the old private section of the object we want to clone and copy all the data into itself.
+
+Composite -
+	One pattern that we will use that will be instrumental to the project will be Composite. With the composite design pattern, we can create lists that can be made up of tasks or sublists that can contain tasks or even more sublists. One problem we anticipate encountering while implementing the project is the difficulty of creating objects that are derived from a base class so that we can treat tasks, sublists, and lists all as the same in a common interface. The composite design pattern solves this problem as it allows us to treat all objects similarly, and they will still act appropriately due to their inheritance from a base class. 
+ 
+Iterator - 
+	This pattern will be very useful in updating the priorities of specific tasks as their due dates get closer. For example, if a task with priority 2 (low priority) was created a week ago and has a due date of tomorrow, the iterator will iterate through all the tasks looking at their due dates and see that this low priority task isn’t completed yet and the due date is near so it will raise the priority level. A problem we expect to encounter with the implementation of this project is the fact that we have to look through every element in every list to determine the output ranked by priority for the client. I think this design pattern will solve our problems of having to look through every list and sublist since the iterator’s sole purpose is to look at every element in whatever container it is iterating through. 
+
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  >   * [toolname](link) - Short description
  > * What will be the input/output of your project?
