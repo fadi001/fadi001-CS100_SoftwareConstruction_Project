@@ -9,10 +9,12 @@
 Being college students during this pandemic we have realized the importance of time management and organization. Therefore, we want to create a task manager that will keep students organized while managing these tough times.
 
 Languages and tools:
-* c++
-* git
-* Github
-* Valgrind
+* C++ - Programming language that will be the main language used for this project. C++ is an extension of the C programming language
+* [git](https://git-scm.com)
+* [Github](https://github.com)
+* [Valgrind](https://valgrind.org)
+
+The input of our project will be the client typing in certain tasks with the options to add a priority level and a due date. The output of the project will be a list of tasks that need to be completed, ranked by priority. The client can also make subtasks that will also have priority levels and due dates.
 
 Prototype - 
 	One of the design patterns we chose to use in this project is Prototype. We chose this pattern because it will allow us to clone a list without having to fill out a whole new list. For example, this will allow the user to copy their tasks from week A to week B without having to re-enter the items on the list. The problem we anticipate encountering while implementing this project is that some of the data that the feature will try to copy from week A to week B will be private. We will need to use prototype to clone the objects because it will allow us to use the same class and create a new object which can still access the old private section of the object we want to clone and copy all the data into itself.
