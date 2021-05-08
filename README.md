@@ -23,18 +23,16 @@ Composite -
 	One pattern that we will use that will be instrumental to the project will be Composite. With the composite design pattern, we can create lists that can be made up of tasks or sublists that can contain tasks or even more sublists. One problem we anticipate encountering while implementing the project is the difficulty of creating objects that are derived from a base class so that we can treat tasks, sublists, and lists all as the same in a common interface. The composite design pattern solves this problem as it allows us to treat all objects similarly, and they will still act appropriately due to their inheritance from a base class. 
  
 
- > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to 
- > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
- >   * Backlog, TODO, In progress, In testing, Done
- >   * You can change these or add more if you'd like, but we should be able to identify at least these.
- > * There is no requirement for automation in the project board but feel free to explore those options.
- > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Create smaller development tasks as issues and assign them to team members. Place these in the `TODO` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
- > Include a class diagram(s) for each design pattern and a description of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
+The first OMT diagram we tried to produce contained two distinct diagrams connected by an inheritance. One diagram being the OMT diagram for the composite design pattern which contained the classes ListElements, SubLists, and Tasks. The second diagram was the diagram for the prototype design pattern which contained the classes PrototypeInterface, ConcretePrototype_SubLists, and ConcretePrototype_Tasks. The PrototypeInterface class inherited from the SubLists class to try to get the SubLists functions available to the prototype objects so that they could be treated as ListElements after being created. However, we realized that only the SubLists members would be available to the prototypes and not the Tasks’ members. After doing some research, we came upon the solution to add a “clone()” function into our existing classes within just the composite design pattern and having no classes for the prototype design pattern since the copying of objects will be done within their own classes. Furthermore, this allows the clone() function to be a pure virtual function of the ListElements class which would mean that we are also implementing the strategy design pattern. We realized after making our final OMT diagram that we are unconsciously applying the strategy pattern as the determination of which clone function will be run will occur at run time. 
+
+Original OMT:
+
+
+Final OMT:
+
+
+
  
  > ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
