@@ -16,7 +16,8 @@ class Sublist : public ListElements {
 	void add (ListElements* input);
 	void markComplete (ListElements* done);
 	void remove (ListElements* out);
-	int getPriority();
+	int getPriority() const;
+	void print() const;
 	ListElements* clone();
 };
 	

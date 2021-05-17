@@ -3,6 +3,7 @@
 
 #include <string>
 #include <sstream> 
+#include <iostream>
 
 using namespace std;
 
@@ -13,11 +14,11 @@ class ListElements{
 
     public:
 	ListElements() {}
-	virtual ~ListElements();
-	virtual int getPriority() = 0;
+	~ListElements() {}
+	virtual int getPriority() const = 0;
 	virtual void markComplete (ListElements* completed) = 0;
 	virtual void remove (ListElements* out) = 0;
-	virtual void print() = 0;
+	virtual void print() const = 0;
 	virtual ListElement* clone() = 0;
 };
 
