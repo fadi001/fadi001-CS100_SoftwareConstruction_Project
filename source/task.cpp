@@ -1,4 +1,9 @@
-#include "../header/listelements.hpp"
 #include "../header/task.hpp"
 
-Task:://start adding functions
+string Task:getDueDate() const{
+	return this->dueDate;
+}
+
+void Task::setDueDate(const string date){
+	this->dueDate = date;
+}
