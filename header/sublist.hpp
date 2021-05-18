@@ -6,6 +6,7 @@
 
 class Sublist : public ListElements {
     private:
+	int size;
 	vector<ListElements*> theList;
 	void sortList();
 
@@ -13,6 +14,7 @@ class Sublist : public ListElements {
 	Sublist() {
 		priority = 11;
 		isDone = false;
+		size = 0;
 	}
 	Sublist (const Sublist &sub);
 	~Sublist();
