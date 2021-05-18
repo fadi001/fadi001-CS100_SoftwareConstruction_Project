@@ -1,6 +1,6 @@
 #include "../header/task.hpp"
 
-string Task:getDueDate() const{
+string Task::getDueDate() const{
 	return this->dueDate;
 }
 
