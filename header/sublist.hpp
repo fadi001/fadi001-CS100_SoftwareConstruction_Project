@@ -10,7 +10,10 @@ class Sublist : public ListElements {
 	void sortList();
 
     public:
-	Sublist();
+	Sublist() {
+		priority = 11;
+		isDone = false;
+	}
 	Sublist (const Sublist &sub);
 	~Sublist();
 	void add (ListElements* input);
