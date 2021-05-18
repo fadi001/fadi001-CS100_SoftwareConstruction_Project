@@ -1,11 +1,9 @@
 #ifndef __TEST_ADD_RDUDH001__
 #define __TEST_ADD_RDUDH001__
 
-#include "../header/sublist.hpp"
-#include "../header/task.hpp"
+#include "../source/sublist.cpp"
+#include "../source/task.cpp"
 #include "gtest/gtest.h"
-
-using namespace std;
 
 TEST (TestAddNoSort, SimpleAdd) {
 	Sublist* list1 = new Sublist("list 1");
