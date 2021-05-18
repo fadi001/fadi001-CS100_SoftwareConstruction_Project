@@ -1,4 +1,9 @@
-#include "../header/listelements.hpp"
 #include "../header/task.hpp"
+std::string Task::getDescription() const{
+	return taskDesc;
+}
 
-Task:://start adding functions
+void Task::setDescription(const std::string description){
+	this->taskDesc = description;
+}
+
