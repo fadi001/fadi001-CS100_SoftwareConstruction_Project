@@ -7,17 +7,19 @@
 class Sublist : public ListElements {
     private:
 	int size;
+	string listName;
 	vector<ListElements*> theList;
 	void sortList();
 
     public:
-	Sublist() {
+	Sublist(string name) : listName(name) {
 		priority = 11;
 		isDone = false;
 		size = 0;
 	}
 	Sublist (const Sublist &sub);
 	~Sublist();
+	int getSize() const { return size; }
 	void add (ListElements* input);
 	void markComplete (ListElements* done);
 	void remove (ListElements* out);

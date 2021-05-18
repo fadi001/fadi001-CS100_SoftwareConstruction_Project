@@ -10,14 +10,15 @@ class Task : public ListElements {
 	string taskDesc;
 
     public:
-	Task(int taskPriority, string date, string name, string desc) : priority(taskPriority), dueDate(date), taskName(name), taskDesc (desc) {
+	Task(int taskPriority, string date, string name, string desc) : dueDate(date), taskName(name), taskDesc (desc) {
 		isDone = false;
+		priority = taskPriority;
 	}
 	Task (const Task &t);
 	~Task();
 	string getDueDate() const;
 	string getTaskName() const;
-	string getDescription const;
+	string getDescription() const;
 	bool getCompleted() const;
 	int getPriority() const;
 	void setDueDate (const string date);

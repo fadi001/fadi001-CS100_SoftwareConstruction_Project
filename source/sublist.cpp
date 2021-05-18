@@ -2,7 +2,7 @@
 #include "../header/sublist.hpp"
 
 void Sublist::add (ListElements* input) {
-	list.push_back(input);
-	sortList();
+	theList.push_back(input);
+	//sortList(); once function is defined I will uncomment, this will be tested to make sure push_back works
 	++size;
 }

@@ -8,7 +8,7 @@
 using namespace std;
 
 class ListElements{
-    private:
+    protected:
 	int priority;
     	bool isDone;
 
@@ -16,10 +16,10 @@ class ListElements{
 	ListElements() {}
 	~ListElements() {}
 	virtual int getPriority() const = 0;
-	virtual void markComplete (ListElements* completed) = 0;
-	virtual void remove (ListElements* out) = 0;
-	virtual void print() const = 0;
-	virtual ListElement* clone() = 0;
+	//virtual void markComplete (ListElements* completed) = 0;
+	//virtual void remove (ListElements* out) = 0;
+	//virtual void print() const = 0;
+	virtual ListElements* clone() = 0;
 };
 
 #endif //__LISTELEMENTS_HPP__
