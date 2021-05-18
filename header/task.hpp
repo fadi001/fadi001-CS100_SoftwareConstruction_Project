@@ -17,7 +17,7 @@ class Task : public ListElements {
 	~Task();
 	string getDueDate() const;
 	string getTaskName() const;
-	string getDescription const;
+	string getDescription() const;
 	bool getCompleted() const;
 	int getPriority() const;
 	void setDueDate (const string date);
