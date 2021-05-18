@@ -11,8 +11,9 @@ class Sublist : public ListElements {
 
     public:
 	Sublist() {
-		priority = 11;
-		isDone = false;
+		int priority = 11;
+		bool isDone = false;
+		int size = 0;
 	}
 	Sublist (const Sublist &sub);
 	~Sublist();
