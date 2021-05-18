@@ -3,7 +3,7 @@
 
 TEST(DueDateTest, DateGetterTest){
 	Task* aTask = new Task(1,"May 18, 2021", "Final Work", "Complete final project");
-	EXPECT_EQ("May 18, 2021", aTask->getDueDate();
+	EXPECT_EQ("May 18, 2021", aTask->getDueDate());
 }
 
 TEST(DueDateTest, DateSetterTest){
