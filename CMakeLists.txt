@@ -11,9 +11,9 @@ ADD_EXECUTABLE(schedule
 )
 
 ADD_EXECUTABLE(test
-    tests/test.cpp
     source/sublist.cpp
-    source/task.cpp   
+    source/task.cpp
+    tests/test.cpp   
 )
 
 TARGET_LINK_LIBRARIES(test gtest)

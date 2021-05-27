@@ -3,6 +3,8 @@
 
 #include "listelements.hpp"
 #include <vector>
+#include <string>
+using namespace std;
 
 class Sublist : public ListElements {
     private:
@@ -12,20 +14,20 @@ class Sublist : public ListElements {
 	void sortList();
 
     public:
-	Sublist(string name) : listName(name) {
+	Sublist(string name) : ListElements(), listName(name) {
 		priority = 11;
 		isDone = false;
 		size = 0;
 	}
 	Sublist (const Sublist &sub);
-	~Sublist();
+	~Sublist() { }
 	int getSize() const { return size; }
 	void add (ListElements* input);
 	void markComplete (ListElements* done);
 	void remove (ListElements* out);
 	int getPriority() const;
 	void print() const;
-	ListElements* clone();
+	Sublist* clone();
 };
 	
 #endif //__SUBLIST_HPP__

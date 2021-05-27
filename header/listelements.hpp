@@ -14,11 +14,11 @@ class ListElements{
 
     public:
 	ListElements() {}
-	~ListElements() {}
+	virtual ~ListElements() = default;
 	virtual int getPriority() const = 0;
-	//virtual void markComplete (ListElements* completed) = 0;
-	//virtual void remove (ListElements* out) = 0;
-	//virtual void print() const = 0;
+	virtual void markComplete (ListElements* completed) = 0;
+	virtual void remove (ListElements* out) = 0;
+	virtual void print() const = 0;
 	virtual ListElements* clone() = 0;
 };
 
