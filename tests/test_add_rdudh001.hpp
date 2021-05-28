@@ -66,6 +66,38 @@ TEST (TestAddNoSort, TestNameFirst) {
         delete task1;
 }
 
+TEST (TestFind, SimpleFind) {
+        Sublist* list1 = new Sublist("list 1");
+        Task* task1 = new Task (2, "6th", "Task1", "work");
+        
+        list1->add(task1);
+        
+	ListElements* found = list1->find("Task1");
+
+        EXPECT_EQ(found, task1);
+
+        delete list1;
+        delete task1;
+}
+
+TEST (TestAddNoSort, MultFind) {
+        Sublist* list1 = new Sublist("list 1");
+        Task* task1 = new Task (2, "6th", "Task1", "work");
+        Task* task2 = new Task (4, "7th", "Task2", "home");
+
+        list1->add(task1);
+        list1->add(task2);
+
+        string expected = "Task2";
+        ListElements* found = list1->find("Task2");
+
+        EXPECT_EQ(found->getName(), expected);
+
+        delete list1;
+        delete task1;
+}
+
+
 /*TEST (TestAddNoSort, NotFound) {
         Sublist* list1 = new Sublist("list 1");
         Task* task1 = new Task (2, "6th", "Task1", "work");
