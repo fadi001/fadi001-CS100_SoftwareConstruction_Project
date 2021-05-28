@@ -6,10 +6,10 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main, rdudh001/sublist_remove ] 
+    branches: [ master, rdudh001/sublist_remove ] 
 
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
