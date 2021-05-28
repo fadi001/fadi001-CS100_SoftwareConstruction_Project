@@ -21,6 +21,7 @@ class Sublist : public ListElements {
 	}
 	Sublist (const Sublist &sub);
 	~Sublist() { }
+	ListElements* find (const string name);
 	int getSize() const { return size; }
 	void add (ListElements* input);
 	void markComplete (ListElements* done);
@@ -28,6 +29,7 @@ class Sublist : public ListElements {
 	int getPriority() const;
 	void print() const;
 	Sublist* clone();
+	string getName() const { return listName; }
 };
 	
 #endif //__SUBLIST_HPP__

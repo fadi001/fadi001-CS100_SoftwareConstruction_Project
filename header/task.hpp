@@ -18,7 +18,7 @@ class Task : public ListElements {
 	void markComplete(ListElements* complete);
 	~Task() { }
 	string getDueDate() const;
-	string getTaskName() const;
+	string getName() const { return taskName; }
 	string getDescription() const;
 	bool getCompleted() const;
 	int getPriority() const;

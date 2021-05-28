@@ -11,9 +11,7 @@ void Task::markComplete(ListElements* complete){
 string Task::getDueDate() const {
 
 }
-string Task::getTaskName() const {
 
-}
 string Task::getDescription() const {
 
 }

@@ -1,4 +1,7 @@
 #include "../header/sublist.hpp"
+#include <assert.h>
+
+using namespace std;
 
 Sublist::Sublist(const Sublist& sub) {
 
@@ -10,6 +13,21 @@ void Sublist::add (ListElements* input) {
 	++size;
 }
 
+ListElements* Sublist::find (const string name) {
+	ListElements* curr = nullptr;
+	string currName = "";
+	for (int i = 0; i < this->size; ++i) {
+		curr = theList.at(i);
+		if (curr->getName() == name) {
+			return curr;
+		}
+		curr = nullptr;
+	}
+	
+	assert(curr != nullptr);
+	return curr;
+}
+	
 void Sublist::markComplete (ListElements* done) {
 
 }
