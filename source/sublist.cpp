@@ -37,15 +37,19 @@ void Sublist::markComplete (ListElements* done) {
 }
 
 void Sublist::remove (ListElements* out) {
-	auto it;
+	auto it = theList.begin();
+	int currSize = this->size;
+	ListElements* curr = *it;
 	for (it = theList.begin(); it != theList.end(); ++it) {
-		if (it->getName() == out->getName()) {
+		curr = *it;
+		if (curr->getName() == out->getName()) {
 			theList.erase(it);
+			--this->size;
 			break;
 		}
 	}
 
-	assert (it != theList.end())
+	assert (currSize != size);
 }
 
 int Sublist::getPriority() const {
