@@ -7,14 +7,15 @@ ADD_SUBDIRECTORY(googletest)
 ADD_EXECUTABLE(schedule
     source/sublist.cpp
     source/task.cpp
-    src/main.cpp
+    source/main.cpp
 )
 
 ADD_EXECUTABLE(test
-    tests/test.cpp
     source/sublist.cpp
-    source/task.cpp   
+    source/task.cpp
+    tests/test.cpp   
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
-TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)i
+TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
+

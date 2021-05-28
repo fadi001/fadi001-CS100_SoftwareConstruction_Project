@@ -10,13 +10,15 @@ class Task : public ListElements {
 	string taskDesc;
 
     public:
-	Task(int taskPriority, string date, string name, string desc) : priority(taskPriority), dueDate(date), taskName(name), taskDesc (desc) {
+	Task(int taskPriority, string date, string name, string desc) : ListElements(), dueDate(date), taskName(name), taskDesc (desc) {
 		isDone = false;
+		priority = taskPriority;
 	}
-	Task (const Task &t);
-	~Task();
+	Task (const Task &t);		
+	void markComplete(ListElements* complete);
+	~Task() { }
 	string getDueDate() const;
-	string getTaskName() const;
+	string getName() const { return taskName; }
 	string getDescription() const;
 	bool getCompleted() const;
 	int getPriority() const;
@@ -27,6 +29,8 @@ class Task : public ListElements {
 			       // so if isDone == false then func will set isDone to true
 			       // vice versa for if isDone == true
 	void setPriority(int newVal);
+	void print() const;
+	void remove (ListElements* out);
 	Task* clone();
 };
 
