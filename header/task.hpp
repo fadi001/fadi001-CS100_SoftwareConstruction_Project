@@ -31,6 +31,7 @@ class Task : public ListElements {
 	void setPriority(int newVal);
 	void print() const;
 	void remove (ListElements* out);
+	ListElements* find (const string name);
 	Task* clone();
 };
 

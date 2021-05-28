@@ -55,5 +55,12 @@ Task* Task::clone() {
 
 }
 
+ListElements* Task::find(const string name) {
+	if (this->taskName == name) {
+		return this;
+	}
+	return nullptr;
+}
+
 
 //Task:://start adding functions

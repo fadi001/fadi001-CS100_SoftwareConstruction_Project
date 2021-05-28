@@ -17,23 +17,50 @@ void Sublist::add (ListElements* input) {
 	++size;
 }
 
-ListElements* Sublist::find (const string name) {
+ListElements* Sublist::find (const string name){
 	ListElements* curr = nullptr;
+
+	if (this->listName == name) {
+		return this;
+	}
+
+	for (auto it = theList.begin(); it != theList.end(); ++it) {
+		curr = *it;
+		curr = curr->find(name);
+		if (curr != nullptr) {
+			return curr;
+		}
+	}
+
+	assert (curr != nullptr);
+
+	return curr;
+}
+
+
+	/*ListElements* curr = nullptr;
 	string currName = "";
 	for (int i = 0; i < this->size; ++i) {
 		curr = theList.at(i);
-		if (curr->getName() == name) {
-			return curr;
-		}
+		if (curr->getPriority() == 11) {
+			curr = curr->find(name);
+			if (curr != nullptr) {
+				return curr;
+			}
+		}	
+		else {
+			if (curr->getName() == name) {
+				return curr;
+			}
+		}	
 		curr = nullptr;
 	}
 	
-	assert(curr != nullptr);
 	return curr;
-}
+}*/
 	
 void Sublist::markComplete (ListElements* done) {
-
+  
 }
 
 void Sublist::remove (ListElements* out) {
