@@ -7,6 +7,10 @@ Sublist::Sublist(const Sublist& sub) {
 
 }
 
+void Sublist::setName(const string name) {
+
+}
+
 void Sublist::add (ListElements* input) {
 	theList.push_back(input);
 	//sortList(); once function is defined I will uncomment, this will be tested to make sure push_back works
@@ -47,3 +51,4 @@ void Sublist::print() const {
 Sublist* Sublist::clone() {
 
 }
+

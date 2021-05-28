@@ -20,7 +20,6 @@ class Sublist : public ListElements {
 		size = 0;
 	}
 	void setName (const string name);
-	string getName () const;
 	Sublist (const Sublist &sub);
 	~Sublist() { }
 	ListElements* find (const string name);
