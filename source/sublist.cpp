@@ -1,5 +1,6 @@
 #include "../header/sublist.hpp"
 #include <assert.h>
+#include <string>
 
 using namespace std;
 
@@ -59,20 +60,15 @@ ListElements* Sublist::find (const string name){
 	return curr;
 }*/
 	
-void Sublist::markComplete (ListElements* done) {
+void Sublist::markComplete () {
 	ListElements* curr = nullptr;
 
-	curr = this->find(done->getName());
+	for (auto it = theList.begin(); it != theList.end(); ++it) {
+		curr = *it;
+		curr->markComplete();
+	}
 	
-	for (auto it = theList.begin(); it != theList.end(); ++it) {
-		if (*it == curr) {
-			break;
-		}
-	}
-
-	for (auto it = theList.begin(); it != theList.end(); ++it) {
-		*it->markComplete(curr);
-	}
+	isDone = !isDone;
 }
 
 void Sublist::remove (ListElements* out) {
