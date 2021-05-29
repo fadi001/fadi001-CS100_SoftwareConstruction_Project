@@ -60,7 +60,19 @@ ListElements* Sublist::find (const string name){
 }*/
 	
 void Sublist::markComplete (ListElements* done) {
-  
+	ListElements* curr = nullptr;
+
+	curr = this->find(done->getName());
+	
+	for (auto it = theList.begin(); it != theList.end(); ++it) {
+		if (*it == curr) {
+			break;
+		}
+	}
+
+	for (auto it = theList.begin(); it != theList.end(); ++it) {
+		*it->markComplete(curr);
+	}
 }
 
 void Sublist::remove (ListElements* out) {

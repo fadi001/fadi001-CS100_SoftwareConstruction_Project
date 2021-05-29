@@ -20,7 +20,7 @@ class Task : public ListElements {
 	string getDueDate() const;
 	string getName() const { return taskName; }
 	string getDescription() const;
-	bool getCompleted() const;
+	bool getCompleted() const { return isDone; }
 	int getPriority() const;
 	void setDueDate (const string date);
 	void setTaskName(const string name);
