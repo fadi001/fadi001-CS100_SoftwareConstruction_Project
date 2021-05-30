@@ -11,13 +11,16 @@ class Sublist : public ListElements {
 	int size;
 	string listName;
 	vector<ListElements*> theList;
-	void sortList();
 
     public:
 	Sublist(string name) : ListElements(), listName(name) {
 		priority = 11;
-		isDone = false;
 		size = 0;
+		isDone = false;
+	}
+	int sortList (int val);
+	ListElements* at(int place) {
+		return theList.at(place);
 	}
 	void setName (const string name);
 	Sublist (const Sublist &sub);
@@ -25,12 +28,13 @@ class Sublist : public ListElements {
 	ListElements* find (const string name);
 	int getSize() const { return size; }
 	void add (ListElements* input);
-	void markComplete (ListElements* done);
+	void markComplete ();
 	void remove (ListElements* out);
 	int getPriority() const;
 	void print() const;
 	Sublist* clone();
 	string getName() const { return listName; }
+	bool getCompleted() const { return isDone; }
 };
 	
 #endif //__SUBLIST_HPP__

@@ -17,7 +17,9 @@ class ListElements{
 	virtual ~ListElements() = default;
 	virtual string getName() const = 0;
 	virtual int getPriority() const = 0;
-	virtual void markComplete (ListElements* completed) = 0;
+	virtual ListElements* find (const string name) = 0;
+	virtual void markComplete() = 0;
+	virtual bool getCompleted() const  = 0;
 	virtual void remove (ListElements* out) = 0;
 	virtual void print() const = 0;
 	virtual ListElements* clone() = 0;

@@ -3,6 +3,11 @@
 #include "../header/sublist.hpp"
 #include "../header/task.hpp"
 #include "../header/listelements.hpp"
+#include "test_remove_rdudh001.hpp"
+#include "test_find_rdudh001.hpp"
+#include "test_mark_complete_rdudh001.hpp"
+#include "test_sort_rdudh001.hpp"
+#include "test_add_sort_rdudh001.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

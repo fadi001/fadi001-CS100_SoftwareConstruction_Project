@@ -4,8 +4,8 @@ Task::Task(const Task& t) {
 
 }
 
-void Task::markComplete(ListElements* complete){
-
+void Task::markComplete(){
+	isDone = !isDone;
 }
 
 string Task::getDueDate() const {
@@ -16,12 +16,8 @@ string Task::getDescription() const {
 
 }
 
-bool Task::getCompleted() const {
-
-}
-
 int Task::getPriority() const {
-
+	return priority;
 }
 
 void Task::setDueDate (const string date){
@@ -32,10 +28,6 @@ void Task::setTaskName(const string name) {
 }
 
 void Task::setDescription (const string description) {
-
-}
-
-void Task::setCompletion () {
 
 }
 
@@ -53,6 +45,13 @@ void Task::remove (ListElements* out) {
 
 Task* Task::clone() {
 
+}
+
+ListElements* Task::find(const string name) {
+	if (this->taskName == name) {
+		return this;
+	}
+	return nullptr;
 }
 
 
