@@ -11,7 +11,6 @@ class Sublist : public ListElements {
 	int size;
 	string listName;
 	vector<ListElements*> theList;
-	void sortList();
 
     public:
 	Sublist(string name) : ListElements(), listName(name) {
@@ -19,6 +18,7 @@ class Sublist : public ListElements {
 		size = 0;
 		isDone = false;
 	}
+	int sortList (int val);
 	void setName (const string name);
 	Sublist (const Sublist &sub);
 	~Sublist() { }
