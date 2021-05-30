@@ -22,7 +22,7 @@ void Sublist::add (ListElements* input) {
 	int pVal = input->getPriority();
 	int place = this->sortList(pVal);
 
-	for (int i = (this->size) - 1; i >= place; --i) {
+	for (int i = ((this->size) - 2); i >= place; --i) {
 		theList.at(i+1) = theList.at(i);
 	}
 
@@ -91,6 +91,15 @@ Sublist* Sublist::clone() {
 }
 
 int Sublist::sortList(int val) {
+	if (this->size == 0) {
+		return 0;
+	}
+	if (this->size == 1) {
+		if (theList.at(0)->getPriority() > val) {
+			return 0;
+		}
+		return 1;
+	}
 	int currVal = 0;
 	ListElements* curr = nullptr;
 	
