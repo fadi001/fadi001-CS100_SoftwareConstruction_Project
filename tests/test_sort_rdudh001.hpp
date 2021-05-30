@@ -15,12 +15,12 @@ TEST (TestSort, FindFront) {
 
 	list1->add(task1);
 	list1->add(task2);
-	list1->add(task3);
+	//list1->add(task3);
 
-	int pVal = task3->getPriority();
-	int place = list1->sortList(pVal);
+	int pV = task3->getPriority();
+	int p = list1->sortList(pV);
 
-	EXPECT_EQ(place, 0);
+	EXPECT_EQ(p, 0);
 
 	delete list1;
 }
@@ -35,10 +35,10 @@ TEST (TestSort, FindBack) {
         list1->add(task2);
 	list1->add(task3);
 
-        int pVal = task3->getPriority();
-        int place = list1->sortList(pVal);
+        int pV = task3->getPriority();
+        int p = list1->sortList(pV);
 
-        EXPECT_EQ(place, 2);
+        EXPECT_EQ(p, 2);
 
         delete list1;
 }
@@ -51,12 +51,12 @@ TEST (TestSort, FindMiddle) {
 
         list1->add(task1);
         list1->add(task2);
-	list1->add(task3);
+	//list1->add(task3);
 
-        int pVal = task3->getPriority();
-        int place = list1->sortList(pVal);
+        int pV = task3->getPriority();
+        int p = list1->sortList(pV);
 
-        EXPECT_EQ(place, 1);
+        EXPECT_EQ(p, 1);
 
         delete list1;
 }
@@ -69,14 +69,14 @@ TEST (TestSort, FindSublist) {
 	Sublist* list2 = new Sublist ("List 2");
 
         list1->add(task1);
-	list1->add(list2);
+	//list1->add(list2);
         list2->add(task2);
 	list2->add(task3);
 
-        int pVal = list2->getPriority();
-        int place = list1->sortList(pVal);
+        int pV = list2->getPriority();
+        int p = list1->sortList(pV);
 
-        EXPECT_EQ(place, 1);
+        EXPECT_EQ(p, 1);
 
         delete list1;
 }

@@ -15,20 +15,20 @@ void Sublist::setName(const string name) {
 void Sublist::add (ListElements* input) {
 	theList.push_back(input);
 	++size;
-/*	if (this->size == 1) {
+	if (this->size == 1) {
 		return;
 	}
 	
 	int pVal = input->getPriority();
 	int place = this->sortList(pVal);
 
-	for (int i = this->size - 1; i >= place; --i) {
+	for (int i = ((this->size) - 2); i >= place; --i) {
 		theList.at(i+1) = theList.at(i);
 	}
 
 	theList.at(place) = input;
 	//sortList(); once function is defined I will uncomment, this will be tested to make sure push_back works
-*/
+
 }
 
 ListElements* Sublist::find (const string name){
@@ -50,28 +50,6 @@ ListElements* Sublist::find (const string name){
 
 	return curr;
 }
-
-
-	/*ListElements* curr = nullptr;
-	string currName = "";
-	for (int i = 0; i < this->size; ++i) {
-		curr = theList.at(i);
-		if (curr->getPriority() == 11) {
-			curr = curr->find(name);
-			if (curr != nullptr) {
-				return curr;
-			}
-		}	
-		else {
-			if (curr->getName() == name) {
-				return curr;
-			}
-		}	
-		curr = nullptr;
-	}
-	
-	return curr;
-}*/
 	
 void Sublist::markComplete () {
 	ListElements* curr = nullptr;
@@ -113,6 +91,15 @@ Sublist* Sublist::clone() {
 }
 
 int Sublist::sortList(int val) {
+	if (this->size == 0) {
+		return 0;
+	}
+	if (this->size == 1) {
+		if (theList.at(0)->getPriority() > val) {
+			return 0;
+		}
+		return 1;
+	}
 	int currVal = 0;
 	ListElements* curr = nullptr;
 	

@@ -19,6 +19,9 @@ class Sublist : public ListElements {
 		isDone = false;
 	}
 	int sortList (int val);
+	ListElements* at(int place) {
+		return theList.at(place);
+	}
 	void setName (const string name);
 	Sublist (const Sublist &sub);
 	~Sublist() { }
