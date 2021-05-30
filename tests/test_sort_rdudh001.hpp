@@ -33,7 +33,7 @@ TEST (TestSort, FindBack) {
 
         list1->add(task1);
         list1->add(task2);
-	//list1->add(task3);
+	list1->add(task3);
 
         int pV = task3->getPriority();
         int p = list1->sortList(pV);
