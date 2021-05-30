@@ -4,8 +4,8 @@ Task::Task(const Task& t) {
 
 }
 
-void Task::markComplete(ListElements* complete){
-
+void Task::markComplete(){
+	isDone = !isDone;
 }
 
 string Task::getDueDate() const {
@@ -13,10 +13,6 @@ string Task::getDueDate() const {
 }
 
 string Task::getDescription() const {
-
-}
-
-bool Task::getCompleted() const {
 
 }
 
@@ -32,10 +28,6 @@ void Task::setTaskName(const string name) {
 }
 
 void Task::setDescription (const string description) {
-
-}
-
-void Task::setCompletion () {
 
 }
 

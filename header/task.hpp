@@ -15,19 +15,16 @@ class Task : public ListElements {
 		priority = taskPriority;
 	}
 	Task (const Task &t);		
-	void markComplete(ListElements* complete);
+	void markComplete();
 	~Task() { }
 	string getDueDate() const;
 	string getName() const { return taskName; }
 	string getDescription() const;
-	bool getCompleted() const;
+	bool getCompleted() const { return isDone; }
 	int getPriority() const;
 	void setDueDate (const string date);
 	void setTaskName(const string name);
 	void setDescription (const string description);
-	void setCompletion (); // will turn task's isDone variable to its inverse, 
-			       // so if isDone == false then func will set isDone to true
-			       // vice versa for if isDone == true
 	void setPriority(int newVal);
 	void print() const;
 	void remove (ListElements* out);
