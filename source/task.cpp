@@ -17,7 +17,7 @@ string Task::getDescription() const {
 }
 
 int Task::getPriority() const {
-
+	return priority;
 }
 
 void Task::setDueDate (const string date){

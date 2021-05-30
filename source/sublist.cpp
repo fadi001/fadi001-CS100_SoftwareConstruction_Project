@@ -14,8 +14,21 @@ void Sublist::setName(const string name) {
 
 void Sublist::add (ListElements* input) {
 	theList.push_back(input);
-	//sortList(); once function is defined I will uncomment, this will be tested to make sure push_back works
 	++size;
+/*	if (this->size == 1) {
+		return;
+	}
+	
+	int pVal = input->getPriority();
+	int place = this->sortList(pVal);
+
+	for (int i = this->size - 1; i >= place; --i) {
+		theList.at(i+1) = theList.at(i);
+	}
+
+	theList.at(place) = input;
+	//sortList(); once function is defined I will uncomment, this will be tested to make sure push_back works
+*/
 }
 
 ListElements* Sublist::find (const string name){
@@ -88,7 +101,7 @@ void Sublist::remove (ListElements* out) {
 }
 
 int Sublist::getPriority() const {
-
+	return priority;
 }
 
 void Sublist::print() const {
@@ -99,3 +112,19 @@ Sublist* Sublist::clone() {
 
 }
 
+int Sublist::sortList(int val) {
+	int currVal = 0;
+	ListElements* curr = nullptr;
+	
+	for (int i = 0; i < this->size-1; ++i) {
+		curr = theList.at(i);
+		currVal = curr->getPriority();
+
+		if (currVal > val) {
+			return i;
+		}
+	}
+
+	return size - 1;
+
+}
