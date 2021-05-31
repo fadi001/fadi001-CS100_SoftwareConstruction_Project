@@ -9,11 +9,11 @@ void Task::markComplete(){
 }
 
 string Task::getDueDate() const {
-
+	return dueDate;	
 }
 
 string Task::getDescription() const {
-
+	return taskDesc;
 }
 
 int Task::getPriority() const {
@@ -21,18 +21,19 @@ int Task::getPriority() const {
 }
 
 void Task::setDueDate (const string date){
-
+	this->dueDate = date;
 }
 
 void Task::setName(const string name) {
+
 }
 
 void Task::setDescription (const string description) {
-
+	this->taskDesc = description;
 }
 
 void Task::setPriority(int newVal) {
-
+	this->priority = newVal;
 }
 
 void Task::print() const {
