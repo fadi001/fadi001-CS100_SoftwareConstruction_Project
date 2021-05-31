@@ -25,7 +25,7 @@ class Task : public ListElements {
 	bool getCompleted() const { return isDone; }
 	int getPriority() const;
 	void setDueDate (const string date);
-	void setTaskName(const string name);
+	void setName(const string name);
 	void setDescription (const string description);
 	void setPriority(int newVal);
 	void print() const;
@@ -36,6 +36,9 @@ class Task : public ListElements {
 		taskParent = parent;
 	}
 	ListElements* getParent() { return taskParent; }
+	void add(ListElements* input) {return;}
+	ListElements* at (int i) { return this; }
+	int getSize() const { return 1; }
 };
 
 #endif //__TASK_HPP__

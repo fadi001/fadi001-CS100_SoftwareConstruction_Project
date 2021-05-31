@@ -23,6 +23,7 @@ class Sublist : public ListElements {
 	void setParent(ListElements* parent) {
 		parentList = parent;
 	}
+	void setName(const string name);
 	ListElements* getParent() {
 		return parentList;
 	}
@@ -30,7 +31,6 @@ class Sublist : public ListElements {
 	ListElements* at(int place) {
 		return theList.at(place);
 	}
-	void setName (const string name);
 	Sublist (const Sublist &sub);
 	~Sublist() { }
 	ListElements* find (const string name);

@@ -24,8 +24,8 @@ void Task::setDueDate (const string date){
 	this->dueDate = date;
 }
 
-void Task::setTaskName(const string name) {
-	this->taskName = name;
+void Task::setName(const string name) {
+
 }
 
 void Task::setDescription (const string description) {
