@@ -17,6 +17,7 @@ class Sublist : public ListElements {
 	Sublist(string name) : ListElements(), listName(name) {
 		priority = 11;
 		size = 0;
+		parentList = nullptr;
 		isDone = false;
 	}
 	void setParent(ListElements* parent) {
