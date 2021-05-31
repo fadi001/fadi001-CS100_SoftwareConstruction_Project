@@ -14,7 +14,7 @@ TEST(CopySublistTest, CopySubList1){
 
 	ListElements* newOne = curr;
 	
-	EXPECT_EQ(newOne, curr);
+	EXPECT_EQ(newOne->getsize(), curr->size());
 	delete curr;
 	delete newOne;
 }
