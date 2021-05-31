@@ -7,12 +7,12 @@
 #include "../header/task.hpp"
 
 TEST(CopySublistTest, CopySubList1){
-	ListElements* curr = new Sublist("Initial List");
+	Sublist* curr = new Sublist("Initial List");
 	Task* task = new Task(3, "11/17/2001", "Birth", "The day I was born");
 			curr->add(task);
 			task->setParent(curr);
 
-	ListElements* newOne = curr;
+	Sublist* newOne = curr;
 	
 	EXPECT_EQ(newOne->getsize(), curr->size());
 	delete curr;
