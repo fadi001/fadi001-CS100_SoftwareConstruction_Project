@@ -7,6 +7,7 @@ using namespace std;
 Sublist::Sublist(const Sublist& sub) {
 	theList = sub.theList;
 	priority = sub.priority;
+	parentList = sub.parentList;
 	isDone = false;
 }
 

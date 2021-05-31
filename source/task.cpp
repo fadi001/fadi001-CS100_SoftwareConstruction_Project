@@ -6,6 +6,7 @@ Task::Task(const Task& t) {
 	taskName = t.taskName;
 	taskDesc = t.taskDesc;
 	isDone = false;
+	taskParent = t.taskParent;
 }
 
 void Task::markComplete(){
