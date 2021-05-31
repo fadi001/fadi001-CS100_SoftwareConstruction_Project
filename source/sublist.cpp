@@ -5,7 +5,9 @@
 using namespace std;
 
 Sublist::Sublist(const Sublist& sub) {
-
+	theList = sub.theList;
+	priority = sub.priority;
+	isDone = false;
 }
 
 void Sublist::setName(const string name) {
