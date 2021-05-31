@@ -67,7 +67,7 @@ int main() {
 			cout << endl;
 		}
 		else if (entered == 'b') {
-			cout << "Enter the name for the new list" << endl;
+			cout << "Enter the name for the new list: ";
 			cin.get();
 			getline(cin, inputNameS);
 			Sublist* newList = new Sublist (inputNameS);
@@ -82,6 +82,7 @@ int main() {
 			ListElements* temp = find(inputNameS);
 
 			curr->add(temp);
+			temp->setParent(curr);
 			cout << endl << endl;
 		}
 		
@@ -128,6 +129,7 @@ int main() {
 
 			cout << endl;
 		}
+		//mark complete 
 		
 		
 		entered = main_menu(curr);
@@ -150,7 +152,7 @@ ListElements* find (string name) {
 
 
 char main_menu(ListElements* currList) {
-	cout << "Current sublist: " << currList->getName() << endl;
+	cout << "Current List: " << currList->getName() << endl;
 	cout << "Please select an action: " << endl << endl;
 	cout << "(a) Change the name of your list" << endl;
 	cout << "(b) Create a new list" << endl;

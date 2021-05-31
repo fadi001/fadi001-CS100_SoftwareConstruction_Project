@@ -18,7 +18,7 @@ class ListElements{
 	virtual string getName() const = 0;
 	virtual void setName(const string name) = 0;
 	virtual int getSize() const = 0;
-	virtual ListElements* at(int i);
+	virtual ListElements* at(int i) = 0;
 	virtual void add(ListElements* input) = 0;
 	virtual int getPriority() const = 0;
 	virtual ListElements* find (const string name) = 0;
