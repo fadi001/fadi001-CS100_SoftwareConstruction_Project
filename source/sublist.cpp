@@ -9,7 +9,7 @@ Sublist::Sublist(const Sublist& sub) {
 }
 
 void Sublist::setName(const string name) {
-	listName = name;
+	this->listName = name;
 }
 
 void Sublist::add (ListElements* input) {
