@@ -22,6 +22,8 @@ class ListElements{
 	virtual bool getCompleted() const  = 0;
 	virtual void remove (ListElements* out) = 0;
 	virtual void print() const = 0;
+	virtual void setParent(ListElements* parent);
+	virtual ListElements* getParent();
 	virtual ListElements* clone() = 0;
 };
 

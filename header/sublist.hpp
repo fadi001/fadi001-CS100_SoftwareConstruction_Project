@@ -11,12 +11,19 @@ class Sublist : public ListElements {
 	int size;
 	string listName;
 	vector<ListElements*> theList;
+	ListElements* parentList;
 
     public:
 	Sublist(string name) : ListElements(), listName(name) {
 		priority = 11;
 		size = 0;
 		isDone = false;
+	}
+	void setParent(ListElements* parent) {
+		parentList = parent;
+	}
+	ListElements* getParent() {
+		return parentList;
 	}
 	int sortList (int val);
 	ListElements* at(int place) {
