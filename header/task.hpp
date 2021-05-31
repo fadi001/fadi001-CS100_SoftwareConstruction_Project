@@ -8,11 +8,13 @@ class Task : public ListElements {
 	string dueDate;
 	string taskName;
 	string taskDesc;
+	ListElements* taskParent;
 
     public:
 	Task(int taskPriority, string date, string name, string desc) : ListElements(), dueDate(date), taskName(name), taskDesc (desc) {
 		isDone = false;
 		priority = taskPriority;
+		taskParent = nullptr;
 	}
 	Task (const Task &t);		
 	void markComplete();
@@ -30,6 +32,10 @@ class Task : public ListElements {
 	void remove (ListElements* out);
 	ListElements* find (const string name);
 	Task* clone();
+	void setParent (ListElements* parent) {
+		taskParent = parent;
+	}
+	ListElements* getParent() { return taskParent; }
 };
 
 #endif //__TASK_HPP__
