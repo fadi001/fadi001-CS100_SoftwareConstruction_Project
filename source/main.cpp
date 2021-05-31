@@ -8,8 +8,8 @@
 
 using namespace std;
 
-char main_menu(Sublist* currList);
-ListElements* find(string name, Sublist* list);
+char main_menu(ListElements* currList);
+ListElements* find(string name);
 vector<ListElements*> all;
 
 int main() {
@@ -141,7 +141,7 @@ ListElements* find (string name) {
        	for (auto it = all.begin(); it != all.end(); ++it) {
                	temp = *it;
 
-                if (temp->getName() == inputNameS) {
+                if (temp->getName() == name) {
 			return temp;
                 }
         }
@@ -149,7 +149,7 @@ ListElements* find (string name) {
 }
 
 
-char main_menu(Sublist* currList) {
+char main_menu(ListElements* currList) {
 	cout << "Current sublist: " << currList->getName() << endl;
 	cout << "Please select an action: " << endl << endl;
 	cout << "(a) Change the name of your list" << endl;
