@@ -34,7 +34,7 @@ int main() {
 			cout << endl;
 			cout << endl;
 		}
-		else if (entered == 'b') {
+		else if (entered == 'c') {
 			cout << "Enter following task information: " << endl;
 			cout << "Task name: ";
 			cin.get();
@@ -60,11 +60,48 @@ int main() {
 			
 			Task* task = new Task(p, inputDate, inputNameT, inputDesc);
 			curr->add(task);
+			task->setParent(curr);
 			all.push_back(task);
 			cout << endl;
 		}
-		else if (entered == 'c') {
-			//implement
+		else if (entered == 'b') {
+			cout << "Enter the name for the new list" << endl;
+			cin.get();
+			getline(cin, inputNameS);
+			Sublist* newList = new Sublist (inputNameS);
+			all.push_back(newList);
+			cout << endl << endl;
+		}
+
+		else if (entered == 'd') {
+			cout << "Enter the name of the list to be added to the current list: ";
+			cin.get();
+			getline(cin, inputNameS);
+			ListElements* temp = nullptr;
+			for (auto it = all.begin(); it != all.end(); ++it) {
+				temp = *it;
+
+				if (temp->getName() == inputNameS) {
+					break;
+				}
+			}
+
+			curr->add(temp);
+			cout << endl << endl;
+		}
+		else if (entered == 'i') {
+			cout << endl;
+			cout << curr->getName() << endl;
+			cout << endl;
+			ListElements* temp = nullptr;
+
+			for (int i = 0; i < curr->getSize(); ++i) {
+				temp = curr->at(i);
+
+				cout << "\t" << temp->getName() << "(" << temp->getPriority() << ")" << endl;
+			}
+
+			cout << endl;
 		}
 		
 		
@@ -78,10 +115,14 @@ char main_menu(Sublist* currList) {
 	cout << "Current sublist: " << currList->getName() << endl;
 	cout << "Please select an action: " << endl << endl;
 	cout << "(a) Change the name of your list" << endl;
-	cout << "(b) Add a task to current list" << endl;
-	cout << "(c) Create and add a new sublist to current list" << endl;
-	cout << "(d) Change current list to sublist" << endl;
-	cout << "(c) Print elements of current list" << endl;
+	cout << "(b) Create a new list" << endl;
+	cout << "(c) Create and add a new task to current list" << endl;
+	cout << "(d) Add a list to current list" << endl;
+	cout << "(e) Change current list to sublist" << endl;
+	cout << "(f) Change back to parent list" << endl;
+	cout << "(g) Remove an element from the list" << endl;
+	cout << "(h) Create a copy of the current list" << endl;
+	cout << "(i) Print elements of current list" << endl;
 	cout << "(q) Quit" << endl;
 
 	char in;
