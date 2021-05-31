@@ -115,7 +115,7 @@ int main() {
 			}
 		}
 
-		else if (entered == 'i') {
+		else if (entered == 'j') {
 			cout << endl;
 			cout << curr->getName() << endl;
 			cout << endl;
@@ -129,7 +129,32 @@ int main() {
 
 			cout << endl;
 		}
+		
+		else if (entered == 'i') {
+			cout << "Please enter the name of the element you wish to mark: ";
+			cin.get();
+			getline(cin, inputNameS);
+			ListElements* temp = find(inputNameS);
+			temp->markComplete();
+			cout << endl << endl;
+		}
 		//mark complete 
+		
+		else if (entered == 'k') {
+			ListElements* temp = nullptr;
+			for (int i = 0; i < curr->getSize(); ++i) {
+				temp = curr->at(i);
+				if (temp->getCompleted() == true) {
+					cout << temp->getName() << " (" << temp->getPriority() << ")" << endl;
+				}
+			}
+
+			if (temp == nullptr){
+				cout << "No completed items in this list" << endl;
+			}
+
+			cout << endl;
+		}
 		
 		
 		entered = main_menu(curr);
@@ -162,7 +187,10 @@ char main_menu(ListElements* currList) {
 	cout << "(f) Change back to parent list" << endl;
 	cout << "(g) Remove an element from the list" << endl;
 	cout << "(h) Create a copy of the current list" << endl;
-	cout << "(i) Print elements of current list" << endl;
+	cout << "(i) Mark an element as complete" << endl;
+	cout << "(j) Print elements of current list" << endl;
+	cout << "(k) Print elements of current list that are completed" << endl;
+	cout << "(l) Print expanded list" << endl;
 	cout << "(q) Quit" << endl;
 
 	char in;
