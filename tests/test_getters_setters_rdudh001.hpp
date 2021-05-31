@@ -104,6 +104,25 @@ TEST (TestGettersSetters, TaskSetDesc) {
         EXPECT_EQ(task->getDescription(), expected);
 }
 
+TEST (TestGettersSetters, ListGetName) {
+        string name = "Task 1";
+
+        Sublist* sub = new Sublist(name);
+
+        EXPECT_EQ(sub->getName(), name);
+}
+
+TEST (TestGettersSetters, ListSetName) {
+        string name = "Task 1";
+
+        Sublist* sub = new Sublist (name);
+        sub->setName("Sublist 1");
+        string expected = "Sublist 1";
+
+        EXPECT_EQ(sub->getName(), expected);
+}
+
+
 
 
 #endif
