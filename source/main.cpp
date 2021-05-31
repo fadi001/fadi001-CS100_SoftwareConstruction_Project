@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <assert.h>
 #include "../header/listelements.hpp"
 #include "../header/sublist.hpp"
 #include "../header/task.hpp"
@@ -8,6 +9,8 @@
 using namespace std;
 
 char main_menu(Sublist* currList);
+ListElements* find(string name, Sublist* list);
+vector<ListElements*> all;
 
 int main() {
 	char entered;
@@ -16,10 +19,9 @@ int main() {
 	string inputDate;
 	string inputDesc;
 	int p;
-	vector<ListElements*> all;
 	cin.clear();
 
-	Sublist* curr = new Sublist("Initial List");
+	ListElements* curr = new Sublist("Initial List");
 	all.push_back(curr);
 
 	entered = main_menu(curr);
@@ -77,18 +79,41 @@ int main() {
 			cout << "Enter the name of the list to be added to the current list: ";
 			cin.get();
 			getline(cin, inputNameS);
-			ListElements* temp = nullptr;
-			for (auto it = all.begin(); it != all.end(); ++it) {
-				temp = *it;
-
-				if (temp->getName() == inputNameS) {
-					break;
-				}
-			}
+			ListElements* temp = find(inputNameS);
 
 			curr->add(temp);
 			cout << endl << endl;
 		}
+		
+		else if (entered == 'e') {
+			cout << "Enter the name of the sublist you wish to switch to: ";
+			cin.get();
+			getline(cin, inputNameS);
+			curr = find(inputNameS);
+		}
+
+		else if (entered == 'f') {
+			curr = curr->getParent();
+		}
+
+		else if (entered == 'g') {
+			cout << "Enter the name of the element you wish to remove: ";
+			cin.get();
+			getline(cin, inputNameS);
+
+			ListElements* temp = curr->find(inputNameS);
+			curr->remove(temp);
+
+			for (auto it = all.begin(); it != all.end(); ++it) {
+				temp = *it;
+				
+				if (temp->getName() == inputNameS){
+					all.erase(it);
+					break;
+				}
+			}
+		}
+
 		else if (entered == 'i') {
 			cout << endl;
 			cout << curr->getName() << endl;
@@ -110,6 +135,19 @@ int main() {
 
 	return 0;
 }
+
+ListElements* find (string name) {
+	ListElements* temp = nullptr;
+       	for (auto it = all.begin(); it != all.end(); ++it) {
+               	temp = *it;
+
+                if (temp->getName() == inputNameS) {
+			return temp;
+                }
+        }
+	assert (temp != nullptr);
+}
+
 
 char main_menu(Sublist* currList) {
 	cout << "Current sublist: " << currList->getName() << endl;
