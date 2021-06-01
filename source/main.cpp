@@ -155,6 +155,9 @@ int main() {
 
 			cout << endl;
 		}
+		else if (entered == 'l'){
+			cout << curr->print() << endl;
+		}
 		
 		
 		entered = main_menu(curr);
