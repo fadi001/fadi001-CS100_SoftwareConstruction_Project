@@ -16,7 +16,7 @@ class Task : public ListElements {
 		priority = taskPriority;
 		taskParent = nullptr;
 	}
-	Task (const Task &t);		
+	Task(const Task &t);		
 	void markComplete();
 	~Task() { }
 	string getDueDate() const;
@@ -31,7 +31,7 @@ class Task : public ListElements {
 	string print() const;
 	void remove (ListElements* out);
 	ListElements* find (const string name);
-	Task* clone();
+	ListElements* clone();
 	void setParent (ListElements* parent) {
 		taskParent = parent;
 	}

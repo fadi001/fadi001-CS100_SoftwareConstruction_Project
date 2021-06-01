@@ -4,7 +4,12 @@
 using namespace std;
 
 Task::Task(const Task& t) {
-
+	priority = t.priority;
+	dueDate = t.dueDate;
+	taskName = t.taskName + " Copy";
+	taskDesc = t.taskDesc;
+	isDone = false;
+	taskParent = t.taskParent;
 }
 
 void Task::markComplete(){
@@ -51,8 +56,8 @@ void Task::remove (ListElements* out) {
 
 }
 
-Task* Task::clone() {
-
+ListElements* Task::clone() {
+	return new Task(*this);
 }
 
 ListElements* Task::find(const string name) {

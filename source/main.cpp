@@ -114,7 +114,17 @@ int main() {
 				}
 			}
 		}
+		
+		 else if (entered == 'h') {
+                       cout << "Enter the name of the element you wish to copy: ";
+                        cin.get();
+                        getline(cin, inputNameS);
 
+                        ListElements* temp = find(inputNameS);
+			ListElements* newOne = temp->clone();
+			curr->add(newOne);
+			cout << endl;
+                }
 		else if (entered == 'j') {
 			cout << endl;
 			cout << curr->getName() << endl;

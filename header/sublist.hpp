@@ -31,7 +31,7 @@ class Sublist : public ListElements {
 	ListElements* at(int place) {
 		return theList.at(place);
 	}
-	Sublist (const Sublist &sub);
+	Sublist(const Sublist &sub);
 	~Sublist() { }
 	ListElements* find (const string name);
 	int getSize() const { return size; }
@@ -40,7 +40,7 @@ class Sublist : public ListElements {
 	void remove (ListElements* out);
 	int getPriority() const;
 	string print() const;
-	Sublist* clone();
+	ListElements* clone();
 	string getName() const { return listName; }
 	bool getCompleted() const { return isDone; }
 };

@@ -6,7 +6,12 @@
 using namespace std;
 
 Sublist::Sublist(const Sublist& sub) {
-
+	listName = sub.listName + " Copy";
+	size = sub.size;
+	theList = sub.theList;
+	priority = sub.priority;
+	parentList = sub.parentList;
+	isDone = false;
 }
 
 void Sublist::setName(const string name) {
@@ -116,8 +121,8 @@ string Sublist::print() const {
 	return ss.str();
 }
 
-Sublist* Sublist::clone() {
-
+ListElements* Sublist::clone() {
+	return new Sublist(*this);
 }
 
 int Sublist::sortList(int val) {

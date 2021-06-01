@@ -11,6 +11,8 @@
 #include "test_getters_setters_rdudh001.hpp"
 #include "test_print_rdudh001.hpp"
 
+#include "sublist_task_copy_test.hpp"
+
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
