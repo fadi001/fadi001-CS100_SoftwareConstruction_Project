@@ -25,7 +25,7 @@ TEST (TestPrint, OneTaskAndOneSublist) {
 	list1->add(list2);
         string actual = list1->print();
 
-        string expected = "\nList 1\n\n\tTask 1 (2)\n\nList 2\n\n\tTask 2 (1)\n\n";
+        string expected = "\nList 1\n\n\tTask 1 (2)\n\tSUBLIST: List 2\n\nList 2\n\n\tTask 2 (1)\n\n";
 
         EXPECT_EQ(actual, expected);
 }
@@ -45,7 +45,7 @@ TEST (TestPrint, MultTasksAndOneSublist) {
 	list2->add(task4);
         string actual = list1->print();
 
-        string expected = "\nList 1\n\n\tTask 1 (2)\n\tTask 3 (5)\n\nList 2\n\n\tTask 2 (1)\n\tTask 4 (9)\n\n";
+        string expected = "\nList 1\n\n\tTask 1 (2)\n\tTask 3 (5)\n\tSUBLIST: List 2\n\nList 2\n\n\tTask 2 (1)\n\tTask 4 (9)\n\n";
 
         EXPECT_EQ(actual, expected);
 }

@@ -28,6 +28,7 @@ void Sublist::add (ListElements* input) {
 	}
 
 	theList.at(place) = input;
+	input->setParent(this);
 	//sortList(); once function is defined I will uncomment, this will be tested to make sure push_back works
 
 }
@@ -96,6 +97,10 @@ string Sublist::print() const {
 
 	for (auto it = theList.begin(); it != theList.end(); ++it) {
 		curr = *it;
+
+		if (curr->getParent() != nullptr && curr->getPriority() == 11) {
+			ss << "\tSUBLIST: " << curr->getName() << endl;
+		}
 
 		ss << curr->print() << endl;
 	}
