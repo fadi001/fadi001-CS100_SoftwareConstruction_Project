@@ -200,11 +200,10 @@ int main() {
 		entered = main_menu(curr);
 
 		if (entered == 'q') {
-			while (curr->getParent() != nullptr) {
-				curr = curr->getParent();
+			for (int i = 0; i < all.size(); ++i) {
+				delete all.at(i);
 			}
-
-			delete curr;
+			all.clear();
 		}
 	}
 
