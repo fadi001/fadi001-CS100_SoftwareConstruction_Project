@@ -44,25 +44,25 @@ int main() {
 			cin.clear();
 
 			cout << "Enter task due date (ex. 12/5/2021): ";
-			cin.get();
+			//cin.get();
 			getline(cin, inputDate);
 			cin.clear();
 			//cout << endl;
 	
 			cout << "Enter the priority of this task: ";
 			cin >> p;
-			cin.clear();
+			//cin.clear();
 			//cout << endl;
 
 			cout << "Enter a description for your task: ";
-			cin.get();
+			cin.ignore();	
 			getline(cin, inputDesc);
 			cin.clear();
 			cout << endl;
 			
 			Task* task = new Task(p, inputDate, inputNameT, inputDesc);
 			curr->add(task);
-			task->setParent(curr);
+			//task->setParent(curr);
 			all.push_back(task);
 			cout << endl;
 		}
@@ -82,7 +82,7 @@ int main() {
 			ListElements* temp = find(inputNameS);
 
 			curr->add(temp);
-			temp->setParent(curr);
+			//temp->setParent(curr);
 			cout << endl << endl;
 		}
 		
@@ -165,7 +165,34 @@ int main() {
 
 			cout << endl;
 		}
+		else if (entered == 'l'){
+			cout << curr->print() << endl;
+		}
+
+		else if (entered == 'm') {
+			ListElements* temp = nullptr;
+			
+			cout << "\nMain Lists\n\n";
+
+			for (auto it = all.begin(); it != all.end(); ++it) {
+				temp = *it;
+
+				if (temp->getPriority() == 11 && temp->getParent() == nullptr) {
+					cout << '\t' << temp->getName() << endl;
+				}
+			}
+		}
+		//add print all main lists	
 		
+
+		else if (entered == 'n') {
+			cout << "Enter the current name of the element you wish to rename: ";
+			cin.get();
+			getline(cin, inputNameS);
+			ListElements* temp = find(inputNameS);
+			temp->setName(inputNameS);
+		}
+
 		
 		entered = main_menu(curr);
 	}
@@ -189,7 +216,7 @@ ListElements* find (string name) {
 char main_menu(ListElements* currList) {
 	cout << "Current List: " << currList->getName() << endl;
 	cout << "Please select an action: " << endl << endl;
-	cout << "(a) Change the name of your list" << endl;
+	cout << "(a) Change the name of the current list" << endl;
 	cout << "(b) Create a new list" << endl;
 	cout << "(c) Create and add a new task to current list" << endl;
 	cout << "(d) Add a list to current list" << endl;
@@ -201,6 +228,8 @@ char main_menu(ListElements* currList) {
 	cout << "(j) Print elements of current list" << endl;
 	cout << "(k) Print elements of current list that are completed" << endl;
 	cout << "(l) Print expanded list" << endl;
+	cout << "(m) Print names of main lists" << endl;
+	cout << "(n) Change the name of a certain element" << endl;
 	cout << "(q) Quit" << endl;
 
 	char in;

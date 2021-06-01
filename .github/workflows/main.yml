@@ -6,7 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
+  
     branches: [ master, fzaki001/clone_func, fadi001/task_sublist_copy, rdudh001/getters_and_setters, rdudh001/add_func_sort, rdudh001/sort_func, rdudh001/sublist_remove, rdudh001/find_func, rdudh001/mark_complete_func ] 
+
 
   pull_request:
     branches: [ master ]

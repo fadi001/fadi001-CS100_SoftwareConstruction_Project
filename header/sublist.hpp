@@ -39,8 +39,8 @@ class Sublist : public ListElements {
 	void markComplete ();
 	void remove (ListElements* out);
 	int getPriority() const;
-	void print() const;
-	ListElements* clone();
+	string print() const;
+	Sublist* clone();
 	string getName() const { return listName; }
 	bool getCompleted() const { return isDone; }
 };

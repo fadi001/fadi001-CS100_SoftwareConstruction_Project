@@ -1,6 +1,7 @@
 #include "../header/sublist.hpp"
 #include <assert.h>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -32,6 +33,7 @@ void Sublist::add (ListElements* input) {
 	}
 
 	theList.at(place) = input;
+	input->setParent(this);
 	//sortList(); once function is defined I will uncomment, this will be tested to make sure push_back works
 
 }
@@ -87,8 +89,36 @@ int Sublist::getPriority() const {
 	return priority;
 }
 
-void Sublist::print() const {
+string Sublist::print() const {
+	ListElements* curr = nullptr;
+	ostringstream ss;
 
+	if (this->size == 0) {
+		ss << "There are no elements in the list" << endl;
+		return ss.str();
+	}
+
+	ss << endl << this->getName() << endl << endl;
+
+	for (auto it = theList.begin(); it != theList.end(); ++it) {
+		curr = *it;
+
+		if (curr->getParent() != nullptr && curr->getPriority() == 11) {
+			ss << "\tSUBLIST: " << curr->getName() << endl;
+		}
+		if (curr->getPriority() < 11) {
+			ss << curr->print() << endl;
+		}
+	}
+
+	for (auto it = theList.begin(); it != theList.end(); ++it) {
+		curr = *it;
+		if (curr->getPriority() == 11) {
+			ss << curr->print() <<endl;
+		}
+	}
+
+	return ss.str();
 }
 
 ListElements* Sublist::clone() {
