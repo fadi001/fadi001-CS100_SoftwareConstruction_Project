@@ -20,6 +20,12 @@ class Sublist : public ListElements {
 		parentList = nullptr;
 		isDone = false;
 	}
+	~Sublist(){
+		for(int i=0;i<size;i++){
+			delete theList[i];
+		}
+		delete parentList;
+	}
 	void setParent(ListElements* parent) {
 		parentList = parent;
 	}
@@ -32,7 +38,6 @@ class Sublist : public ListElements {
 		return theList.at(place);
 	}
 	Sublist(const Sublist &sub);
-	~Sublist() { }
 	ListElements* find (const string name);
 	int getSize() const { return size; }
 	void add (ListElements* input);

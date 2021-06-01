@@ -191,12 +191,15 @@ int main() {
 			getline(cin, inputNameS);
 			ListElements* temp = find(inputNameS);
 			temp->setName(inputNameS);
+			temp = nullptr;
 		}
 
 		
 		entered = main_menu(curr);
 	}
-
+	for(int i=0;i<all.size();i++){
+		delete all[i];
+	}
 	return 0;
 }
 
