@@ -59,4 +59,40 @@ TEST(CopySublistTestThenPrint, CopySubListPushBackThenPrint){
         delete newOne;
 }
 
+TEST(CopySublistTestThenPrint, CopySubList1){
+        Sublist* curr = new Sublist("Initial List");
+        Task* task = new Task(3, "11/17/2001", "Birth", "born");
+                        curr->add(task);
+                        task->setParent(curr);
+	
+	task->setPriority(1);
+
+        ListElements* newOne = curr->clone();
+        curr->add(newOne);
+	
+        EXPECT_EQ(newOne->getName(), "Initial List Copy");
+	 EXPECT_EQ(task->getPriority(), "1");
+        EXPECT_EQ(curr->print(), "\nInitial List\n\n\tBirth (1): born\n\t\tdue: 11/17/2001\n\tSUBLIST: Initial List Copy\n\nInitial List Copy\n\n\tBirth (1): born\n\t\tdue: 11/17/2001\n\n");
+        delete task;
+        delete curr;
+        delete newOne;
+}
+TEST(CopySublistTestThenPrint, CopySubList2){
+        Sublist* curr = new Sublist("Initial List");
+        Task* task = new Task(3, "11/17/2001", "Birth", "born");
+                        curr->add(task);
+                        task->setParent(curr);
+
+        task->setName("toDo");
+
+        ListElements* newOne = curr->clone();
+        curr->add(newOne);
+
+        EXPECT_EQ(task->getName(), "toDo");
+         EXPECT_EQ(newOne->getPriority(), "3");
+        delete task;
+        delete curr;
+        delete newOne;
+}
+
 #endif
