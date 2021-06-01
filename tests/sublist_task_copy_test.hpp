@@ -15,6 +15,7 @@ TEST(CopySublistTest, CopySubList1){
 	Sublist* newOne = curr->clone();
 	
 	EXPECT_EQ(newOne->getSize(), curr->getSize());
+	delete task;
 	delete curr;
 	delete newOne;
 }
