@@ -6,7 +6,7 @@
 #include "../header/sublist.hpp"
 #include "../header/task.hpp"
 
-TEST(CopySublistTestThenPrint, CopySubList1){
+TEST(CopySublistTestThenPrint, CopySubList0){
 	Sublist* curr = new Sublist("Initial List");
 	Task* task = new Task(3, "11/17/2001", "Birth", "The day I was born");
 			curr->add(task);
