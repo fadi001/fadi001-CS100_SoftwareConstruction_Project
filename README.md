@@ -40,7 +40,55 @@ Final OMT:<br/>
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ ![](ss1.PNG)
+ <br/>
+ ![](ss2.PNG)
+ <br/>
+ ![](ss3.PNG)
+ <br/>
+ ![](ss4.PNG)
+ <br/>
+ ![](ss5.PNG)
+ <br/>
+ ![](ss6.PNG)
+ <br/>
+ ![](ss7.PNG)
+ <br/>
+ ![](ss8.PNG)
+ <br/>
+ ![](ss9.PNG)
+ <br/>
+ ![](ss10.PNG)
+ <br/>
+ ![](ss11.PNG)
+ <br/>
+ ![](ss12.PNG)
+ <br/>
+ ![](ss13.PNG)
+ <br/>
+ ![](ss14.PNG)
+ <br/>
+ ![](ss15.PNG)
+ <br/>
+ ![](ss16.PNG)
+ <br/>
+ ![](ss17.PNG)
+ <br/>
+ ![](ss18.PNG)
+ <br/>
+ ![](ss19.PNG)
+ <br/>
+ ![](ss20.PNG)
+ <br/>
+ ![](ss21.PNG)
+ <br/>
+ ![](ss22.PNG)
+ <br/>
+ ![](ss23.PNG)
+ <br/>
+ ![](ss24.PNG)
+ <br/>
+ ![](ss25.PNG)
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
