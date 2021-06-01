@@ -6,6 +6,7 @@ using namespace std;
 
 Sublist::Sublist(const Sublist& sub) {
 	listName = sub.listName + " Copy";
+	size = sub.size;
 	theList = sub.theList;
 	priority = sub.priority;
 	parentList = sub.parentList;
