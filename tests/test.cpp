@@ -9,6 +9,7 @@
 #include "test_sort_rdudh001.hpp"
 #include "test_add_sort_rdudh001.hpp"
 #include "test_getters_setters_rdudh001.hpp"
+#include "test_print_rdudh001.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

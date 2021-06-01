@@ -1,4 +1,7 @@
 #include "../header/task.hpp"
+#include <sstream>
+
+using namespace std;
 
 Task::Task(const Task& t) {
 
@@ -36,8 +39,12 @@ void Task::setPriority(int newVal) {
 	this->priority = newVal;
 }
 
-void Task::print() const {
-
+string Task::print() const {
+	ostringstream ss;
+	
+	ss << '\t' << this->getName() << " (" << this->getPriority() << "): " << this->getDescription() << endl;
+	ss << "\t\tdue: " << this->getDueDate();
+	return ss.str();
 }
 
 void Task::remove (ListElements* out) {
