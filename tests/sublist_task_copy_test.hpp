@@ -12,7 +12,7 @@ TEST(CopySublistTest, CopySubList1){
 			curr->add(task);
 			task->setParent(curr);
 
-	Sublist* newOne = curr;
+	Sublist* newOne = curr->clone();
 	
 	EXPECT_EQ(newOne->getSize(), curr->getSize());
 	delete curr;

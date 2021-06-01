@@ -50,7 +50,7 @@ void Task::remove (ListElements* out) {
 }
 
 Task* Task::clone() {
-
+	return new Task(*this);
 }
 
 ListElements* Task::find(const string name) {

@@ -90,7 +90,7 @@ void Sublist::print() const {
 }
 
 Sublist* Sublist::clone() {
-
+	return new Sublist(*this);
 }
 
 int Sublist::sortList(int val) {
