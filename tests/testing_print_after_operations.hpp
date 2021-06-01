@@ -71,7 +71,7 @@ TEST(CopySublistTestThenPrint, CopySubList1){
         curr->add(newOne);
 	
         EXPECT_EQ(newOne->getName(), "Initial List Copy");
-	 EXPECT_EQ(task->getPriority(), "1");
+	 EXPECT_EQ(task->getPriority(), 1);
         EXPECT_EQ(curr->print(), "\nInitial List\n\n\tBirth (1): born\n\t\tdue: 11/17/2001\n\tSUBLIST: Initial List Copy\n\nInitial List Copy\n\n\tBirth (1): born\n\t\tdue: 11/17/2001\n\n");
         delete task;
         delete curr;
@@ -89,7 +89,7 @@ TEST(CopySublistTestThenPrint, CopySubList2){
         curr->add(newOne);
 
         EXPECT_EQ(task->getName(), "toDo");
-         EXPECT_EQ(newOne->getPriority(), "3");
+         EXPECT_EQ(newOne->getPriority(), 3);
         delete task;
         delete curr;
         delete newOne;
