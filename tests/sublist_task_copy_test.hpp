@@ -16,7 +16,7 @@ TEST(CopySublistTest, CopySubList1){
 	
 	EXPECT_EQ(newOne->getSize(), curr->getSize());
 	EXPECT_EQ(newOne->getPriority(), curr->getPriority());
-	EXPECT_EQ(newOne->getName(), "Initial List Copy")
+	EXPECT_EQ(newOne->getName(), "Initial List Copy");
 	delete task;
 	delete curr;
 	delete newOne;
