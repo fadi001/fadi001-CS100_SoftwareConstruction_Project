@@ -29,7 +29,7 @@ The first OMT diagram we tried to produce contained two distinct diagrams connec
 Original OMT:
 ![](originalOMT.PNG)
 
-Final OMT:
+Final OMT:<br/>
 ![](actualOMT.png)
 
 
