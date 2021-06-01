@@ -122,7 +122,7 @@ int main() {
 
                         ListElements* temp = find(inputNameS);
 			ListElements* newOne = temp->clone();
-			all.push_back(newOne);
+			curr->add(newOne);
 			cout << endl;
                 }
 		else if (entered == 'j') {
