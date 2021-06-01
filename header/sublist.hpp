@@ -40,7 +40,7 @@ class Sublist : public ListElements {
 	void remove (ListElements* out);
 	int getPriority() const;
 	string print() const;
-	Sublist* clone();
+	ListElements* clone();
 	string getName() const { return listName; }
 	bool getCompleted() const { return isDone; }
 };
