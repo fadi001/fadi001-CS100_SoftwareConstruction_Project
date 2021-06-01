@@ -90,7 +90,9 @@ Final OMT:<br/>
  <br/>
  ![](ss25.PNG)
  ## Installation/Usage
- > Instructions on installing and running your application
+ After running "cmake3 ." and "make all" run "./schedule" to execute the program.
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ [![CI](https://github.com/rishabdudhia/final-project-rdudh001_fzaki001_alee447/actions/workflows/main.yml/badge.svg)](https://github.com/rishabdudhia/final-project-rdudh001_fzaki001_alee447/actions/workflows/main.yml)
+ 
+ We used continuous integration to test our project. Above we have the CI badge.
  
