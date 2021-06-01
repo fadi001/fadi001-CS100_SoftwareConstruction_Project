@@ -16,7 +16,7 @@ class Task : public ListElements {
 		priority = taskPriority;
 		taskParent = nullptr;
 	}
-	Task (const Task &t);		
+	ListElements* (const Task &t);		
 	void markComplete();
 	~Task() { }
 	string getDueDate() const;

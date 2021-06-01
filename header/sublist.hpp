@@ -31,7 +31,7 @@ class Sublist : public ListElements {
 	ListElements* at(int place) {
 		return theList.at(place);
 	}
-	Sublist (const Sublist &sub);
+	ListElements* (const Sublist &sub);
 	~Sublist() { }
 	ListElements* find (const string name);
 	int getSize() const { return size; }
