@@ -1,6 +1,7 @@
 #include "../header/sublist.hpp"
 #include <assert.h>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -82,8 +83,24 @@ int Sublist::getPriority() const {
 	return priority;
 }
 
-void Sublist::print() const {
+string Sublist::print() const {
+	ListElements* curr = nullptr;
+	ostringstream ss;
 
+	if (this->size == 0) {
+		ss << "There are no elements in the list" << endl;
+		return ss.str();
+	}
+
+	ss << endl << this->getName() << endl << endl;
+
+	for (auto it = theList.begin(); it != theList.end(); ++it) {
+		curr = *it;
+
+		ss << curr->print() << endl;
+	}
+
+	return ss.str();
 }
 
 Sublist* Sublist::clone() {

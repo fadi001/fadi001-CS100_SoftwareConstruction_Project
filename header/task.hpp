@@ -28,7 +28,7 @@ class Task : public ListElements {
 	void setName(const string name);
 	void setDescription (const string description);
 	void setPriority(int newVal);
-	void print() const;
+	string print() const;
 	void remove (ListElements* out);
 	ListElements* find (const string name);
 	Task* clone();
