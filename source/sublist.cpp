@@ -28,7 +28,7 @@ void Sublist::add (ListElements* input) {
 	}
 
 	theList.at(place) = input;
-	//input->setParent(this);
+	input->setParent(this);
 	//sortList(); once function is defined I will uncomment, this will be tested to make sure push_back works
 
 }
