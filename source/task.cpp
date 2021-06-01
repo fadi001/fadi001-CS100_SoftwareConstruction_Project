@@ -42,7 +42,8 @@ void Task::setPriority(int newVal) {
 string Task::print() const {
 	ostringstream ss;
 	
-	ss << '\t' << this->getName() << " (" << this->getPriority() << ")";
+	ss << '\t' << this->getName() << " (" << this->getPriority() << "): " << this->getDescription() << endl;
+	ss << "\t\tdue: " << this->getDueDate();
 	return ss.str();
 }
 

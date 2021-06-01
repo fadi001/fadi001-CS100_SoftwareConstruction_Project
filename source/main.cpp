@@ -55,7 +55,7 @@ int main() {
 			//cout << endl;
 
 			cout << "Enter a description for your task: ";
-			cin.get();
+			//cin.get();
 			getline(cin, inputDesc);
 			cin.clear();
 			cout << endl;
@@ -158,7 +158,7 @@ int main() {
 		else if (entered == 'l'){
 			cout << curr->print() << endl;
 		}
-		
+		//add print all main lists	
 		
 		entered = main_menu(curr);
 	}
