@@ -77,6 +77,7 @@ void Sublist::remove (ListElements* out) {
 		curr = *it;
 		if (curr->getName() == out->getName()) {
 			theList.erase(it);
+			//delete curr;
 			--this->size;
 			break;
 		}

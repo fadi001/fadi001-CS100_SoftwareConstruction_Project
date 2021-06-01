@@ -122,7 +122,7 @@ int main() {
 
                         ListElements* temp = find(inputNameS);
 			ListElements* newOne = temp->clone();
-			curr->add(newOne);
+			all.push_back(newOne);
 			cout << endl;
                 }
 		else if (entered == 'j') {
@@ -190,12 +190,25 @@ int main() {
 			cin.get();
 			getline(cin, inputNameS);
 			ListElements* temp = find(inputNameS);
+			cout << "Enter the new name of the element: ";
+			cin.get(); 
+			getline(cin,inputNameS);
 			temp->setName(inputNameS);
 		}
 
 		
 		entered = main_menu(curr);
+
+		if (entered == 'q') {
+			while (curr->getParent() != nullptr) {
+				curr = curr->getParent();
+			}
+
+			delete curr;
+		}
 	}
+
+	
 
 	return 0;
 }

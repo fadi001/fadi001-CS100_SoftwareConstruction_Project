@@ -32,7 +32,16 @@ class Sublist : public ListElements {
 		return theList.at(place);
 	}
 	Sublist(const Sublist &sub);
-	~Sublist() { }
+	~Sublist() { /*
+		if (size != 0) {
+			ListElements* curr = nullptr;
+
+			while (this->size != 0) {
+				curr = theList.at(0);
+				this->remove(curr);
+			}
+		}*/
+	}
 	ListElements* find (const string name);
 	int getSize() const { return size; }
 	void add (ListElements* input);
