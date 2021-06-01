@@ -5,6 +5,7 @@
 using namespace std;
 
 Sublist::Sublist(const Sublist& sub) {
+	listName = sub.listName + " Copy";
 	theList = sub.theList;
 	priority = sub.priority;
 	parentList = sub.parentList;
@@ -89,7 +90,7 @@ void Sublist::print() const {
 
 }
 
-Sublist* Sublist::clone() {
+ListElements* Sublist::clone() {
 	return new Sublist(*this);
 }
 

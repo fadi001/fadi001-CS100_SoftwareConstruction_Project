@@ -3,7 +3,7 @@
 Task::Task(const Task& t) {
 	priority = t.priority;
 	dueDate = t.dueDate;
-	taskName = t.taskName;
+	taskName = t.taskName + " Copy";
 	taskDesc = t.taskDesc;
 	isDone = false;
 	taskParent = t.taskParent;
@@ -49,7 +49,7 @@ void Task::remove (ListElements* out) {
 
 }
 
-Task* Task::clone() {
+ListElements* Task::clone() {
 	return new Task(*this);
 }
 
