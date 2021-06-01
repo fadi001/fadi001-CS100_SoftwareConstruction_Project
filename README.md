@@ -30,7 +30,7 @@ Original OMT:
 ![](originalOMT.PNG)
 
 Final OMT:
-![](actualOMT.PNG)
+![](actualOMT.png)
 
 
  
