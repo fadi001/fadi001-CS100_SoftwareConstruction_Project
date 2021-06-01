@@ -31,7 +31,7 @@ TEST(CopySublistTestTThenPrint, CopySubListTwice){
 
         ListElements* newOne = curr->clone();
 	
-	ListElements* newtwo = curr->clone();
+	ListElements* newtwo = newOne->clone();
 
         EXPECT_EQ(newtwo->getSize(), curr->getSize());
         EXPECT_EQ(newtwo->getPriority(), curr->getPriority());
@@ -52,8 +52,6 @@ TEST(CopySublistTestThenPrint, CopySubListPushBackThenPrint){
         ListElements* newOne = curr->clone();
 	curr->add(newOne);
 
-        EXPECT_EQ(newOne->getSize(), curr->getSize());
-        EXPECT_EQ(newOne->getPriority(), curr->getPriority());
         EXPECT_EQ(newOne->getName(), "Initial List Copy");
         EXPECT_EQ(curr->print(), "\nInitial List\n\n\tBirth (3): born\n\t\tdue: 11/17/2001\n\tSUBLIST: Initial List Copy\n\nInitial List Copy\n\n\tBirth (3): born\n\t\tdue: 11/17/2001\n\n");
         delete task;
