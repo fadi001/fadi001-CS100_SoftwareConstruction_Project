@@ -89,7 +89,8 @@ TEST(CopySublistTestThenPrint, CopySubList2){
         curr->add(newOne);
 
         EXPECT_EQ(task->getName(), "toDo");
-         EXPECT_EQ(newOne->getPriority(), 3);
+EXPECT_EQ(newOne->getPriority(), 11);         
+EXPECT_EQ(task->getPriority(), 3);
         delete task;
         delete curr;
         delete newOne;
