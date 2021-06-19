@@ -89,4 +89,7 @@ Final OMT:<br/>
  [![CI](https://github.com/rishabdudhia/final-project-rdudh001_fzaki001_alee447/actions/workflows/main.yml/badge.svg)](https://github.com/rishabdudhia/final-project-rdudh001_fzaki001_alee447/actions/workflows/main.yml)
  
  We used continuous integration to test our project. Above we have the CI badge.
- 
+ ## Kanaban Board
+ <img width="1112" alt="Screen Shot 2021-06-18 at 5 30 39 PM" src="https://user-images.githubusercontent.com/59713219/122625756-9a0bd480-d05b-11eb-81e0-c1ebc83ca20b.png">
+<img width="755" alt="Screen Shot 2021-06-18 at 5 30 47 PM" src="https://user-images.githubusercontent.com/59713219/122625761-9d06c500-d05b-11eb-8d37-30bdf99ad882.png">
+
